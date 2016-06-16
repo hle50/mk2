@@ -2,11 +2,12 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router-deprecated';
 import {HomeService} from './home.service';
+import {ProductComponent} from '../product/product.component'
 
 @Component({
     templateUrl: 'app/home/home.template.html',
     providers: [HomeService],
-    directives: [RouterLink]
+    directives: [RouterLink, ProductComponent]
 })
 export class HomeComponent implements OnInit {
     data;
