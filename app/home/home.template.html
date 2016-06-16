@@ -1,0 +1,70 @@
+<div class="col-md-7 col-lg-7">
+
+
+    <div class="row store-items" id="selections_section">
+        <div class="container">
+            <div *ngFor="let item of data">
+
+
+                <div *ngIf="item.count>0" class="row">
+                    <div class="pull-left">
+                        <aside class="sidebar site-block">
+                            <div class="sidebar-block">
+                                <ul class="store-menu shop-groups-menu">
+                                    <li class="father-market-icon">
+                                        <span>{{item.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="pull-left">
+                        <a href="go/breakfast">
+                            <button type="button" class="btn btn-sm btn-block btn-success"
+                                    style="margin-left:10px;">view more {{item.count}}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div *ngIf="item.count>0" class="row">
+
+                    <div *ngFor="let p of item.products" class="col-sm-6 col-md-4 col-lg-3"
+                         data-toggle="animation-appear"
+                         style="padding: 5px !important;" data-animation-class="animation-fadeInQuick"
+                         data-element-offset="-100">
+                        <div class="store-item" data-action="openProductModalDetails">
+
+                            <div class="store-item-image">
+                                <a href="#">
+                                    <img src="{{p.icon_path}}"
+                                         alt="" height="480" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="store-item-info clearfix" style="font-size: 12px; height: 120px">
+                                <div>
+                                    <a href="#">
+                                        <p class="product-name">
+                                            <strong>{{p.name}}</strong>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="clearfix">
+                                    <span class="container-of-amount"><a href="#" class="text-muted">{{p.amount}} {{p.unit}}</a></span>
+                                                <span class="container-of-amount"><a href="#"
+                                                                                     class="text-muted">Dolphy</a></span>
+                                    <span class="store-item-price themed-color-dark">{{p.price}} VND</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
