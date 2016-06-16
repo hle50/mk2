@@ -6,11 +6,12 @@ import {SearchComponent} from './search/search.component';
 import {SideBarComponent} from './sidebar/sidebar.component';
 import {CartComponent} from './cart/cart.component';
 import {HomeComponent} from './home/home.component';
+import {CatComponent} from './cat/cat.component';
 
 
 @RouteConfig([
 	 { path: '/', name: 'Home', component: HomeComponent },
-	// { path: '/users', name: 'Users', component: UsersComponent },
+	 { path: '/go/:cat', name: 'Cat', component: CatComponent },
 	// { path: '/users/:id', name: 'EditUser', component: UserFormComponent },
 	// { path: '/users/new', name: 'NewUser', component: UserFormComponent },
     // { path: '/posts', name: 'Posts', component: PostsComponent },
