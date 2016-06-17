@@ -1,12 +1,13 @@
 import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import {MODAL_DIRECTVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 import {GlobalService} from "../shared/global.service";
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import * as _ from 'lodash';
 @Component({
     selector: 'product',
     templateUrl: 'app/product/product.template.html',
     directives: [MODAL_DIRECTVES],
-    viewProviders: [BS_VIEW_PROVIDERS],
+    viewProviders: [BS_VIEW_PROVIDERS,ToastsManager],
 
 })
 export class ProductComponent {
@@ -14,7 +15,7 @@ export class ProductComponent {
     @Input() p;
     @ViewChild('lgModal') bgModel;
 
-    constructor(private share:GlobalService) {
+    constructor(private share:GlobalService,private toastr: ToastsManager) {
 
     }
 
@@ -31,7 +32,7 @@ export class ProductComponent {
         });
 
         if (existed) {
-            existed.quantity += this.quantity;
+            existed.quantity +=  _.cloneDeep(this.quantity);
             this.share.updateCart(currentCart);
         }
         else {
@@ -45,9 +46,8 @@ export class ProductComponent {
             this.share.setCart(obj);
         }
 
-
-        console.log(this.share.getCart());
         this.bgModel.hide();
+        this.toastr.success(this.share.getMessage().cartUpdate, 'Success!');
 
     }
 
