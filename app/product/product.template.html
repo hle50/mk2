@@ -1,0 +1,29 @@
+<div  class="col-sm-6 col-md-4 col-lg-3"
+     data-toggle="animation-appear"
+     style="padding: 5px !important;" data-animation-class="animation-fadeInQuick"
+     data-element-offset="-100">
+    <div class="store-item" data-action="openProductModalDetails">
+
+        <div class="store-item-image">
+            <a href="#">
+                <img src="{{p.icon_path}}"
+                     alt="" height="480" class="img-responsive">
+            </a>
+        </div>
+        <div class="store-item-info clearfix" style="font-size: 12px; height: 120px">
+            <div>
+                <a href="#">
+                    <p class="product-name">
+                        <strong>{{p.name}}</strong>
+                    </p>
+                </a>
+            </div>
+            <div class="clearfix">
+                <span class="container-of-amount"><a href="#" class="text-muted">{{p.amount}} {{p.unit}}</a></span>
+                                                <span class="container-of-amount"><a href="#"
+                                                                                     class="text-muted">Dolphy</a></span>
+                <span class="store-item-price themed-color-dark">{{p.price}} VND</span>
+            </div>
+        </div>
+    </div>
+</div>
