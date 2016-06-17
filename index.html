@@ -1,41 +1,54 @@
 <html>
 
 <head>
-  <base href="/">
-  <title>MarketOI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <title>MarketOI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="assets/stylesheets/font-awesome.css">
-  <link rel="stylesheet" href="assets/stylesheets/styles.css">
+    <link rel="stylesheet" href="assets/stylesheets/font-awesome.css">
+    <link rel="stylesheet" href="assets/stylesheets/styles.css">
+    <style>
+        .short-text {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
 
-  <!-- 1. Load libraries -->
-  <!-- IE required polyfills, in this exact order -->
-  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+        .modal-backdrop {
+            bottom: 0;
+            position: fixed;
+        }
+    </style>
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
 
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-  <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
 
-  <!-- 2. Configure SystemJS -->
-  <script src="systemjs.config.js"></script>
-  <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
 
-  <script>
-    System.config({
-    packages: {
-      app: {
-        format: 'register',
-        defaultExtension: 'js'
-      }
-    },
-    map: {
-      moment: 'node_modules/moment/moment.js'
-    }
-  });
-    System.import('app').catch(function(err){ console.error(err); });
-  </script>
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            },
+            map: {
+                moment: 'node_modules/moment/moment.js'
+            }
+        });
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+    </script>
 
 
 </head>
@@ -44,7 +57,7 @@
 
 <body>
 <div id="page-container">
-  <my-app>Loading...</my-app>
+    <my-app>Loading...</my-app>
 </div>
 
 </body>
