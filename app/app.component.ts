@@ -9,6 +9,7 @@ import {HomeComponent} from './home/home.component';
 import {CatComponent} from './cat/cat.component';
 
 
+
 @RouteConfig([
 	 { path: '/', name: 'Home', component: HomeComponent },
 	 { path: '/go/:cat', name: 'Cat', component: CatComponent },

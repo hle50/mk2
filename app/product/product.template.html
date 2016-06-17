@@ -22,7 +22,7 @@
                 <span class="container-of-amount"><a href="#" class="text-muted">{{p.amount}} {{p.unit}}</a></span>
                                                 <span class="container-of-amount short-text"><a href="#"
                                                                                      class="text-muted">{{p.shops_label}}</a></span>
-                <span class="store-item-price themed-color-dark">{{p.price}} VND</span>
+                <span class="store-item-price themed-color-dark">{{numeral(p.price).format('0,0')}} VND</span>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
                                 <div class="pull-right">
                                     <label class="col-md-3 col-xs-6 control-label product_qty" for="product_qty">Qty</label>
                                     <div class="col-md-9 col-xs-6">
-                                        <input type="number" id="product_qty" name="product_qty" class="form-control">
+                                        <input [(ngModel)]="quantity" type="number" id="product_qty" name="product_qty" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                         <div class="col-md-4">
                             <div class="col-md-12">
                                 <div>
-                                    <button type="button" class="btn btn-lg btn-block btn-default addToCartBtn" data-loading-text="Adding..." style="height: 86px;">Add To Cart
+                                    <button (click)="addToCart()" type="button" class="btn btn-lg btn-block btn-default addToCartBtn" data-loading-text="Adding..." style="height: 86px;">Add To Cart
                                     </button>
                                 </div>
                             </div>
