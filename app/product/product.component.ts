@@ -28,12 +28,7 @@ export class ProductComponent {
         });
 
         if (existed) {
-            _.each(currentCart, function (o, i) {
-                if (o.id == id) {
-                    o.quantity += 1;
-                }
-            });
-
+            existed.quantity += this.quantity;
             this.share.updateCart(currentCart);
         }
         else {
