@@ -10,11 +10,8 @@ export class HomeService {
     }
 
     getSelection(){
-        return this._http.get(this._url)
-            .map(res => res.json());
+        return this._http.get(this._url).map(res => res.json());
     }
 
    
-}/**
- * Created by hoale on 6/16/2016.
- */
+}

@@ -8,10 +8,13 @@ import {GlobalService} from "../shared/global.service";
 
 })
 export class CartComponent  {
-    test;
+
     constructor(private share: GlobalService){
-        this.test = this.share;
+
     }
-}/**
- * Created by hoale on 6/16/2016.
- */
+    emptyCart(){
+        this.share.updateCart([]);
+    }
+
+
+}

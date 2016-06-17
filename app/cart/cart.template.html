@@ -2,21 +2,21 @@
     <div id="cartQuickView">
         <div class="col-md-12 cart-total">
             <div class="col-md-7">
-                <h3>0 VND</h3>
-                <span style="display: block">0 ITEM(S)</span>
+                <h3>{{share.totalPrice()}} VND</h3>
+                <span style="display: block">{{share.getCart().length}} ITEM(S)</span>
                 <span style="display: block">Service</span>
-                <span>0 VND</span>
+                <span> VND</span>
             </div>
             <div class="col-md-5">
 
           <span class="mini-cart-button">
-          <a href="#" data-action="empty-cart" class="btn btn-sm btn-block btn-default">EMPTY</a>
+          <button (click)="emptyCart()" class="btn btn-sm btn-block btn-default">EMPTY</button>
         </span>
         <span class="mini-cart-button">
-          <a href="/shoppingCart" class="btn btn-sm btn-block btn-default">VIEW</a>
+          <button  class="btn btn-sm btn-block btn-default">VIEW</button>
         </span>
         <span class="mini-cart-button">
-          <a href="/checkout" class="btn btn-sm btn-block btn-success">CHECKOUT aaaaa {{share.getCart().length}}</a>
+          <button  class="btn btn-sm btn-block btn-success">CHECKOUT</button>
         </span>
 
             </div>
