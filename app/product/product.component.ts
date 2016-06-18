@@ -54,11 +54,7 @@ export class ProductComponent {
 
     }
 
-    onScroll($event) {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            console.log('aa');
-        }
-    }
+
 
 }
 /**

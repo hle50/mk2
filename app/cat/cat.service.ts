@@ -4,13 +4,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CatService {
-    private _url = "http://catalogue.marketoi.com/index.php/api/Front/products/?go=";
 
-    constructor(private _http: Http){
+
+    constructor(private _http:Http) {
     }
 
-    getSelection(cat){
-        return this._http.get(this._url+cat)
+    getSelection(cat, offset, limit) {
+        let _url = "http://catalogue.marketoi.com/index.php/api/Front/products/?go=" + cat + '&limit=' + limit + '&offset=' + offset;
+        return this._http.get(_url)
             .map(res => res.json());
     }
 
