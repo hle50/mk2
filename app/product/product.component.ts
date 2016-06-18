@@ -2,12 +2,15 @@ import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import {MODAL_DIRECTVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 import {GlobalService} from "../shared/global.service";
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import {Message} from '../shared/message';
 import * as _ from 'lodash';
+
 @Component({
     selector: 'product',
     templateUrl: 'app/product/product.template.html',
     directives: [MODAL_DIRECTVES],
-    viewProviders: [BS_VIEW_PROVIDERS,ToastsManager],
+    viewProviders: [BS_VIEW_PROVIDERS, ToastsManager],
+    providers:[Message]
 
 })
 export class ProductComponent {
@@ -15,7 +18,7 @@ export class ProductComponent {
     @Input() p;
     @ViewChild('lgModal') bgModel;
 
-    constructor(private share:GlobalService,private toastr: ToastsManager) {
+    constructor(private share:GlobalService, private toastr:ToastsManager, private message: Message) {
 
     }
 
@@ -32,7 +35,7 @@ export class ProductComponent {
         });
 
         if (existed) {
-            existed.quantity +=  _.cloneDeep(this.quantity);
+            existed.quantity += _.cloneDeep(this.quantity);
             this.share.updateCart(currentCart);
         }
         else {
@@ -47,10 +50,15 @@ export class ProductComponent {
         }
 
         this.bgModel.hide();
-        this.toastr.success(this.share.getMessage().cartUpdate, 'Success!');
+        this.toastr.success(this.message.cartUpdate, 'Success!');
 
     }
 
+    onScroll($event) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            console.log('aa');
+        }
+    }
 
 }
 /**
