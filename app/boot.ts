@@ -1,4 +1,5 @@
 import {bootstrap}    from '@angular/platform-browser-dynamic';
+import {enableProdMode} from '@angular/core';
 import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {GlobalService} from './shared/global.service';
@@ -9,4 +10,5 @@ let options = {
     autoDismiss: true,
     positionClass: 'toast-bottom-right',
 };
+enableProdMode();
 bootstrap(AppComponent, [ROUTER_PROVIDERS, HTTP_PROVIDERS,GlobalService,  provide(ToastOptions, { useValue: new ToastOptions(options)})]);

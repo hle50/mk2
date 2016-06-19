@@ -5,7 +5,18 @@ import {ProductComponent} from '../product/product.component';
 import * as _ from 'lodash';
 
 @Component({
-    templateUrl: 'app/cat/cat.template.html',
+    template:`
+
+<div  (window:scroll)="onScroll($event)" class="row store-items" id="products_section">
+
+    <product [p]="p" *ngFor="let p of data"></product>
+
+
+</div>
+
+
+    `,
+    //templateUrl: 'app/cat/cat.template.html',
     providers: [CatService],
     directives: [ProductComponent]
 

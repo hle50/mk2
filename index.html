@@ -28,7 +28,8 @@
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!--<script src="node_modules/systemjs/dist/system.src.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.src.js"></script>
 
     <!--<script src="node_modules/underscore/underscore.js"></script>-->
     <script src="node_modules/numeral/numeral.js"></script>
@@ -39,20 +40,24 @@
     <script src="node_modules/ng2-toastr/bundles/ng2-toastr.min.js"></script>
 
     <script>
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
+
+        setTimeout(function(){
+            System.config({
+                packages: {
+                    app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                },
+                map: {
+                    moment: 'node_modules/moment/moment.js'
                 }
-            },
-            map: {
-                moment: 'node_modules/moment/moment.js'
-            }
-        });
-        System.import('app').catch(function (err) {
-            console.error(err);
-        });
+            });
+            System.import('app').catch(function (err) {
+                console.error(err);
+            });
+        })
+
     </script>
 
 
